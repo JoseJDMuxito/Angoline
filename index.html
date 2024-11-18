@@ -43,6 +43,9 @@
         left: 0;
         width: 100%;
         z-index: 1000;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
         background-color: #f8fafc;
         display: flex;
         justify-content: space-between;
@@ -58,7 +61,6 @@
       }
       .fixed-header nav a{
         text-decoration: none;
-        font-size: 16px;
         padding: 5px 10px;
       }
       @media (max-width: 768px)
@@ -83,9 +85,8 @@
 
     .fixed-header nav a {
       text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      padding: 5px 10px;
+      color: white;
+      margin: 0 10px;
     }
 
     /* Estilos para o botão de alternância de tema */
@@ -153,24 +154,19 @@
 <body class="">
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top" class="fixed-header">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-wide"><img src="favicon.svg" alt="LOGO" width="50" height="auto"></a>
-    <!-- Right-sided navbar links -->
-    <nav style="position:absolute; right: 100px; top: 10px;" >
-      <a href="#about" class="w3-bar-item w3-button" style="color: black">SOBRE</a>
-      <a href="#team" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-user"></i> EQUIPA</a>
-      <a href="#work" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-th"></i> TRABALHO</a>
-      <a href="#pricing" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-usd"></i> PLANOS</a>
-      <a href="#contact" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-envelope"></i> CONTACTO</a>
-    </nav>
-    <button id="themeToggle" class="theme-toggle-btn">🌙</button>
-  </div>
+<div class="w3-bar w3-white w3-card" id="myNavbar" class="fixed-header">
+  <a class="w3-bar-item w3-button w3-wide"><img src="favicon.svg" alt="LOGO" width="50" height="auto"></a>
+  <!-- Right-sided navbar links -->
+  <nav style="position:absolute; right: 100px; top: 10px;" >
+    <a href="#about" class="w3-bar-item w3-button" style="color: black">SOBRE</a>
+    <a href="#team" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-user"></i> EQUIPA</a>
+    <a href="#work" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-th"></i> TRABALHO</a>
+    <a href="#pricing" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-usd"></i> PLANOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-envelope"></i> CONTACTO</a>
+  </nav>
+  <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+</div>
   <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-
-</div>
-</div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
