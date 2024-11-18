@@ -43,7 +43,7 @@
         left: 0;
         width: 100%;
         z-index: 1000;
-        overflow-x: auto;
+        overflow-x: hidden;
         flex-wrap: nowrap;
         white-space: nowrap;
         background-color: #f8fafc;
@@ -67,7 +67,9 @@
       {
         .fixed-header
         {
+          flex-wrap: wrap;
           flex-direction: row;
+          padding: 5px;
           justify-content: flex-start;
         }
       }
@@ -86,7 +88,15 @@
     .fixed-header nav a {
       text-decoration: none;
       color: white;
+      font-size: 14px;
       margin: 0 10px;
+      padding: 100px 100px;
+    }
+    .fixed-header nav a{
+      font-size: 12px;
+    }
+    .fixed-header img{
+      max-width: 40px;
     }
 
     /* Estilos para o botão de alternância de tema */
@@ -154,9 +164,9 @@
 <body class="">
 
 <!-- Navbar (sit on top) -->
-<a class="w3-bar-item w3-button w3-wide"><img src="favicon.svg" alt="LOGO" width="50" height="auto"></a>
-<div class="w3-bar w3-white w3-card" id="myNavbar" class="fixed-header">
 
+<div class="w3-bar w3-white w3-card" id="myNavbar" class="fixed-header">
+  <a class="w3-bar-item w3-button w3-wide"><img src="favicon.svg" alt="LOGO" width="50" height="auto" style="max-height: 50px; margin-right: 10px"></a>
   <!-- Right-sided navbar links -->
   <nav style="position:absolute; right: 100px; top: 10px;" >
     <a href="#about" class="w3-bar-item w3-button" style="color: black">SOBRE</a>
@@ -165,9 +175,9 @@
     <a href="#pricing" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-usd"></i> PLANOS</a>
     <a href="#contact" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-envelope"></i> CONTACTO</a>
   </nav>
-
+  <button id="themeToggle" class="theme-toggle-btn">🌙</button>
 </div>
-<button id="themeToggle" class="theme-toggle-btn">🌙</button>
+
   <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
 <!-- Sidebar on small screens when clicking the menu icon -->
