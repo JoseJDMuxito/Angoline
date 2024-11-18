@@ -178,7 +178,7 @@
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
     </a>
-    <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+    <button id="themeToggle" class="theme-toggle-btn" class="w3-bar-item w3-button">🌙</button>
   </div>
 </div>
   <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -188,11 +188,12 @@
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">SOBRE</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">EQUIPA</a>
   <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">TRABALHO</a>
   <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PLANOS</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">SOBRE</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACTO</a>
+  <a  href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16" class="theme-toggle-btn">🌙</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -498,6 +499,23 @@
     document.getElementById("modal01").style.display = "block";
     var captionText = document.getElementById("caption");
     captionText.innerHTML = element.alt;
+  }
+
+
+  // Toggle between showing and hiding the sidebar when clicking the menu icon
+  var mySidebar = document.getElementById("mySidebar");
+
+  function w3_open() {
+    if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+    } else {
+      mySidebar.style.display = 'block';
+    }
+  }
+
+  // Close the sidebar with the close button
+  function w3_close() {
+    mySidebar.style.display = "none";
   }
 
   // Seleciona o botão de alternância de tema
