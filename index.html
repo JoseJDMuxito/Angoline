@@ -102,8 +102,8 @@
     .theme-toggle-btn {
       background: #fff;
       border: 2px solid #ccc;
-      border-radius: 20px;
-      font-size: 24px;
+      border-radius: 1000px;
+      font-size: 14px;
       padding: 3px 5px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -154,31 +154,37 @@
     }
     .theme-toggle-btn {
       position: absolute;
-      right: 20px; /* Distância da borda direita */
-      top: 10px;  /* Distância do topo */
+      left: 920px; /* Distância da borda direita */
+      top: 15px;  /* Distância do topo */
     }
 
   </style>
 </head>
 <body class="">
-
 <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <img src="favicon.svg" alt="LOGO" width=55px height="auto"></img>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">SOBRE</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> EQUIPA</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> TRABALHO</a>
+      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PLANOS</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACTO</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-<div class="w3-bar w3-white w3-card" id="myNavbar" class="fixed-header">
-  <a class="w3-bar-item w3-button w3-wide"><img src="favicon.svg" alt="LOGO" width="50" height="auto" style="max-height: 50px; margin-right: 10px"></a>
-  <!-- Right-sided navbar links -->
-  <nav style="position:absolute; right: 100px; top: 10px;" >
-    <a href="#about" class="w3-bar-item w3-button" style="color: black">SOBRE</a>
-    <a href="#team" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-user"></i> EQUIPA</a>
-    <a href="#work" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-th"></i> TRABALHO</a>
-    <a href="#pricing" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-usd"></i> PLANOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="color: black"><i class="fa fa-envelope"></i> CONTACTO</a>
-  </nav>
-  <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+  </div>
 </div>
-
   <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
+<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+  <i class="fa fa-bars"></i>
+</a>
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Fechar ×</a>
