@@ -63,16 +63,14 @@
         text-decoration: none;
         padding: 5px 10px;
       }
-      @media (max-width: 768px)
-      {
-        .fixed-header
-        {
-          flex-wrap: wrap;
-          flex-direction: row;
-          padding: 5px;
-          justify-content: flex-start;
-        }
+    @media (max-width: 768px) {
+      .fixed-header nav {
+        flex-direction: column;
       }
+    }
+    .fixed-header nav a {
+      width: 20%; /* Chaque élément occupera 20% de la largeur disponible */
+    }
 
       .fixed-header nav{
         overflow-x: auto;
@@ -84,13 +82,14 @@
       gap: 15px;
       margin-left: auto;
     }
-
-    .fixed-header nav a {
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      margin: 0 10px;
-      padding: 100px 100px;
+    @media (max-width: 768px) {
+      .fixed-header nav {
+        flex-direction: column;
+      }
+      .fixed-header nav a {
+        width: 100%; /* Chaque élément occupera 100% de la largeur */
+        padding: 10px; /* Réduire le padding */
+      }
     }
     .fixed-header nav a{
       font-size: 12px;
