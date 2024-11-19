@@ -30,7 +30,11 @@
       background-size: cover;
       background-image: url("background.png");
       min-height: 100%;
-      width: 105%;
+      position: relative;
+    }
+    .text{
+      position: absolute;
+      bottom: 1px;
     }
 
     .w3-bar .w3-button {
@@ -110,12 +114,10 @@
       padding: 3px 5px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.15);
     }
 
     .theme-toggle-btn:hover {
       background-color: #f0f0f0;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 12px 30px rgba(0, 0, 0, 0.2);
       transform: translateY(-2px);
     }
 
@@ -129,8 +131,9 @@
       overflow-x: hidden;
     }
 
+
     /* Estilos do modo escuro */
-    body.dark-theme {
+    body.dark-theme .hed {
       background-color: #121212;
       color: #ffffff;
     }
@@ -139,7 +142,7 @@
       background-color: #333;
     }
     body.dark-theme nav a {
-      color: #ffffff;
+      color: white;
     }
 
     body.dark-theme .theme-toggle-btn {
@@ -194,8 +197,8 @@
     }
 
     .navbar-menu a:hover {
-      background-color: #f0f0f0;
-      border-radius: 5px;
+      transition: background 0.3s;
+      border-radius: 100px;
     }
 
     /* Botão de tema dentro do menu */
@@ -223,31 +226,30 @@
       color: #fff;
     }
 
+    .hed{
+      background-color: lightgray;
+    }
+
   </style>
 </head>
-<body class="">
+<body>
 <!-- Navbar (sit on top) -->
-<div class="navbar" style="background-color: lightgray;">
-  <img src="favicon.svg" alt="LOGO">
+<div class="navbar hed">
+  <img src="favicon.svg" alt="LOGO"><p style="font-weight: bolder; font-size: 20px; color: rgba(191,0,255,0.49)">Angoline</p>
   <div class="navbar-menu">
-    <a href="#about" style="font-weight: 900">Sobre</a>
-    <a href="#team" style="font-weight: 900">Equipa</a>
-    <a href="#work" style="font-weight: 900">Trabalho</a>
-    <a href="#pricing" style="font-weight: 900">Transações</a>
-    <a href="#contact" style="font-weight: 900">Contacto</a>
+    <a href="#about" style="font-weight: 900" class="hed">Sobre</a>
+    <a href="#team" style="font-weight: 900;" class="hed">Equipa</a>
+    <a href="#pricing" style="font-weight: 900" class="hed">Transações</a>
+    <a href="#contact" style="font-weight: 900" class="hed">Contacto</a>
     <button id="themeToggle" class="theme-toggle-btn">🌙</button> <!-- Botão de tema dentro do menu -->
   </div>
 </div>
-  <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-<a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-  <i class="fa fa-bars"></i>
-</a>
 
 <!-- Header with full-height image -->
 <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-text-white" style="padding:100px;">
-    <span class="w3-jumbo w3-hide-small">Câmbio Instantâneo:<br>Transações Rápidas e Seguras.<br>$, €, Kz...</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Câmbio Instantâneo:<br>Transações Rápidas e Seguras.<br>$, €, Kz...</span><br>
+  <div class="w3-display-left w3-text-white text" style="padding: 30px;">
+    <span class="w3-jumbo w3-hide-small" style="font-weight: bolder">Câmbio Instantâneo:<br>Transações Rápidas e Seguras.<br>$, €, Kz...</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium" style="font-weight: bolder">Câmbio Instantâneo:<br>Transações Rápidas e Seguras.<br>$, €, Kz...</span><br>
     <span class="w3-large">A confiança nos nossos serviços<br>proporciona-vos uma boa experiência.</span>
     <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Saiba mais</a></p>
   </div>
@@ -255,12 +257,12 @@
 
 <!-- About Section -->
 <div class="w3-container" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">SOBRE A IMPRESA</h3>
-  <p class="w3-center w3-large">O futuro está a distância de um clique</p>
+  <h3 class="w3-center">A IMPRESA</h3>
+  <p class="w3-center w3-large">OS NOSSOS SERVIÇOS</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
     <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">X-FUTURE</p>
+      <i class="fa fa-university icon-large"></i>
+      <p class="w3-large">Transações</p>
       <p></p>
     </div>
     <div class="w3-quarter">
@@ -281,22 +283,30 @@
   </div>
 </div>
 
-<!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3> Web Desingning</h3>
-      <p></p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-code"></i> Nossos projetos</a></p>
-    </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="img/Web%20Site.jpg" alt="Codigo do site em desenvolvimento" width=400rem height=100rem>
-    </div>
+
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">0+</span>
+    <br>Parcerias
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">0+</span>
+    <br>Projetos feitos
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">0+</span>
+    <br>Clientes satisfeitos
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">0+</span>
+    <br>Meetings
   </div>
 </div>
 
+
 <!-- Team Section -->
-<div class="w3-container" style="padding:128px 16px" id="team">
+<div class="w3-container" style="padding: 10px 16px" id="team">
   <h3 class="w3-center">A EQUIPA</h3>
   <p class="w3-center w3-large">Os que administram esta empresa.</p>
   <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
@@ -328,93 +338,6 @@
         </div>
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team3.jpg" alt="Alberto Viegas" style="width:100%">
-        <div class="w3-container">
-          <h3>Alberto Viegas</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contactar</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="/w3images/team4.jpg" alt="Eliezer Mucaji" style="width:100%">
-        <div class="w3-container">
-          <h3>Eliezer Mucaji</h3>
-          <p class="w3-opacity"></p>
-          <p></p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contactar</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Promo Section "Statistics" -->
-<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0+</span>
-    <br>Parcerias
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0+</span>
-    <br>Projetos feitos
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0+</span>
-    <br>Clientes satisfeitos
-  </div>
-  <div class="w3-quarter">
-    <span class="w3-xxlarge">0+</span>
-    <br>Meetings
-  </div>
-</div>
-
-<!-- Work Section -->
-<div class="w3-container" style="padding:128px 16px" id="work">
-  <h3 class="w3-center">NOSSOS TRABALHOS</h3>
-  <p class="w3-center w3-large">O que fizemos pelas pessoas</p>
-
-  <div class="w3-row-padding" style="margin-top:64px">
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_mic.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_phone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_drone.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_sound.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-section">
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tablet.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_camera.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_typewriter.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-    <div class="w3-col l3 m6">
-      <img src="/w3images/tech_tableturner.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-    <img id="img01" class="w3-image">
-    <p id="caption" class="w3-opacity w3-large"></p>
   </div>
 </div>
 
@@ -444,7 +367,7 @@
 </div>
 
 <!-- Pricing Section -->
-<div class="w3-container w3-center w3-dark-grey" style="padding:128px 16px" id="pricing">
+<div class="w3-container w3-center w3-dark-grey" style="padding: 60px 16px" id="pricing">
   <h3>PLANOS</h3>
   <p class="w3-large">Escolha um plano de preços que atenda às tuas necessidades.</p>
   <div class="w3-row-padding" style="margin-top:64px">
@@ -497,19 +420,19 @@
 </div>
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-light-grey" style="padding: 10px 16px" id="contact">
   <h3 class="w3-center">CONTACTO</h3>
   <p class="w3-center w3-large">Envia-nos uma mensagem:</p>
-  <div style="margin-top:48px">
+  <div style="margin-top: 30px">
     <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i>França,Lyon,69100 Villerubanne.</p>
     <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +33 772 026 889</p>
     <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: angocervice@gmail.com</p>
     <br>
     <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Nome" required name="Nome"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Assunto" required name="Assunto"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Mensagem"></p>
       <p>
         <button class="w3-button w3-black" type="submit">
           <i class="fa fa-paper-plane"></i> ENVIAR MENSSAGEM
